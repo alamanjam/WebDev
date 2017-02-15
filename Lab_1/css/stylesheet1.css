@@ -1,6 +1,6 @@
 body
 {
-    background: url(../media/background.png) no-repeat center center fixed;
+    background: url(../../media/background.png) no-repeat center center fixed;
     background-position: top;
     background-attachment: fixed;
     background-size: cover;
@@ -9,10 +9,19 @@ body
 {
     color:white;
 }
+.snowshal
+{
+  margin-left:10px; 
+  margin-bottom:20px;
+}
 div
 {
    
     margin-top:50px;
     height:25px;
     
+}
+ul
+{
+  color:white;  
 }

@@ -5,30 +5,15 @@ body
     background-attachment: fixed;
     background-size: cover;
 }
-.test
+.game
 {
     color:white;
+}
+.statename
+{
+    margin-top:200px;
+}
+button
+{
     margin-top:50px;
-}
-.snowshal
-{
-  margin-left:10px; 
-  margin-bottom:40px;
-}
-div
-{
-   
-    margin-top:50px;
-    height:25px;
-    
-}
-ul
-{
-  color:white;  
-  font-size:20px;
-}
-img
-{
-    margin-left:400px;
-    margin-bottom:200px;
 }

@@ -41,7 +41,7 @@ usa: {
     "Pennsylvania": ["WV", "NY", "NJ", "DE", "MD", "OH"],
     "Rhode Island": ["MA", "CT"],
     "South Carolina": ["GA", "NC"],
-    "South Dakoa": ["ND", "MT", "WY", "NE", "MN", "IA"],
+    "South Dakota": ["ND", "MT", "WY", "NE", "MN", "IA"],
     "Tennessee": ["KY", "MO", "AR", "MS", "AL", "GA", "NC", "VA"],
     "Texas": ["OK", "NM", "LA", "AR"],
     "Utah": ["ID", "NV", "WY", "CO", "AZ", "NM"],

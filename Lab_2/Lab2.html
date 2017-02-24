@@ -9,12 +9,18 @@
 <body>
 <h1 class="game" align = "center">50 States Game!</h1>
 <center>
+<div class = "states">
+?
+</div>
 <h2 class="statename" id = "state" align = "center"></h2>
 
 <script src="javascript/lab2.js" type="text/javascript"></script>
-<input id="user_input" type="text" />
+<input class = "input" id="user_input" type="text" />
 <div>
+<button id = "newgame"type="button" onclick="playNewGame()">New Game</button>
 <button type="button" onclick="getBorderStates()">Submit</button>
+<button type="button" onclick= "nextQuestion()">Next Question</button>
+
 </div>
 <div>
 <h3 class="score" id = "score" align = "center">Score: 0</h3>

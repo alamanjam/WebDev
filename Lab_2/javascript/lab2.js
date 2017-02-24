@@ -4,11 +4,16 @@ function getBorderStates()
 {
     var borderstates =  states.usa[state];
     var answer = document.getElementById("user_input").value.split(", ");
-    if(array1.sort().compare(array2.sort())) {
-     doSomething();
-} else {
-    doAnotherThing();
+    if(borderstates.sort().compare(answer.sort()))
+    {
+     score = score + 100;
+
+	} 
+	else 
+	{
+     score = score -100;
     }
+    document.getElementById("score").innerHTML = "Score: " + score;
     
 }
 Array.prototype.compare = function(testArr) {
@@ -30,4 +35,14 @@ function getScore()
 {
 	return score;
 }
+function playNewGame()
+{
 getRandomState();
+document.getElementById("newgame").disabled = true;
+
+
+}
+function nextQuestion()
+{
+getRandomState();
+}

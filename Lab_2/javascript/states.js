@@ -1,7 +1,7 @@
 var states = {
 usa: {
     "Alabama": ["GA", "FL", "TN", "MS"],
-    "Alaska": [],
+    "Alaska": ["None"],
     "Arizona": ["CA", "NV", "UT", "CO", "NM"],
     "Arkansas": ["MO", "OK", "TX", "LA", "TN", "MS"],
     "California": ["OR", "NV", "AZ"],
@@ -11,7 +11,7 @@ usa: {
     "Delaware": ["MD", "PA"],
     "Florida": ["AL", "GA"],
     "Georgia": ["SC", "NC", "TN", "AL", "FL"],
-    "Hawaii": [],
+    "Hawaii": ["None"],
     "Idaho": ["WA", "MT", "OR", "WY", "UT", "NV"],
     "Illinois": ["WI", "IA", "MO", "KY", "IN"],
     "Indiana": ["MI", "IL", "KY", "OH"],

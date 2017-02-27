@@ -9,8 +9,10 @@
 <body>
 <h1 class="game" align = "center">50 States Game!</h1>
 <center>
+<div id = "bstates" class = "bstates">
 <div class = "states">
 ?
+</div>
 </div>
 <h2 class="statename" id = "state" align = "center"></h2>
 
@@ -18,12 +20,13 @@
 <input class = "input" id="user_input" type="text" />
 <div>
 <button id = "newgame"type="button" onclick="playNewGame()">New Game</button>
-<button type="button" onclick="getBorderStates()">Submit</button>
-<button type="button" onclick= "nextQuestion()">Next Question</button>
+<button id = "submit" type="button" disabled="true"  onclick="getBorderStates()">Submit</button>
+<button id = "next" type="button" disabled="true" onclick= "nextQuestion()">Next Question</button>
 
 </div>
 <div>
 <h3 class="score" id = "score" align = "center">Score: 0</h3>
+<h4 class="score" id = "questions" align = "center">10 Questions Left</h4>
 </div>
 </center>
 </body>

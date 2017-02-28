@@ -1,15 +1,20 @@
 var score = 0;
 var state;
 var questions = 10;
+var borderstates = [];
 function getBorderStates()
 {
-    var borderstates =  states.usa[state];
-    var answer = document.getElementById("user_input").value.split(", ");
-    if(borderstates.sort().compare(answer.sort()))
+    var answer = document.getElementById("user_input").value.trim();
+    var snowshal = borderstates.indexOf(answer);
+    if(snowshal != -1)
     {
+     borderstates.splice(snowshal, 1);
      score = score + 100;
-     nextQuestion();
      document.getElementById("user_input").value = "";
+     if(borderstates.length === 0)
+     {
+         nextQuestion();
+     }
 	} 
 	else 
 	{
@@ -18,25 +23,11 @@ function getBorderStates()
     document.getElementById("score").innerHTML = "Score: " + score;
     
 }
-Array.prototype.compare = function(testArr) {
-    if (this.length != testArr.length) return false;
-    for (var i = 0; i < testArr.length; i++) {
-        if (this[i].compare) { //To test values in nested arrays
-            if (!this[i].compare(testArr[i])) return false;
-        }
-        else if (this[i] !== testArr[i]) return false;
-    }
-    return true;
-}
 function getRandomState()
 {
 	state = Object.keys(states.usa)[parseInt(Math.random() * 50)]
 	document.getElementById("state").innerHTML = "Which states border " + state + "?";
-	for(var i = 0; i < states.usa[state].length; i++)
-	{
-		var container = document.getElementById("bstates");
-		container.innerHTML += '<div class="states"></div>';
-	}
+	borderstates =  states.usa[state];
 }
 function getScore()
 {
@@ -45,6 +36,7 @@ function getScore()
 function playNewGame()
 {
 getRandomState();
+document.getElementById("user_input").value = "";
 document.getElementById("newgame").disabled = true;
 document.getElementById("submit").disabled = false;
 document.getElementById("next").disabled = false ;
@@ -53,6 +45,7 @@ document.getElementById("questions").innerHTML = questions + " Questions Left";
 function nextQuestion()
 {
 getRandomState();
+document.getElementById("user_input").value = "";
 questions--; 
 if(questions != 0)
 document.getElementById("questions").innerHTML = questions + " Questions Left";

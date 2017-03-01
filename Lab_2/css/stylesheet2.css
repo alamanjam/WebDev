@@ -34,9 +34,15 @@ body
 .states
 {
     width: 50px;
-    border: 10px solid black;
     color:white;
     font-size: 50px;
+}
+p
+{
+    margin-top:50px;
+    color:white;
+    font-size: 30px;
+    font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 button
 {

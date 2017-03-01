@@ -8,18 +8,16 @@
 </head>
 <body>
 <h1 class="game" align = "center">50 States Game!</h1>
+<h1 class="game" id = "states" align = "center"></h1>
 <center>
-<div id = "bstates" class = "bstates">
-<div class = "states">
-?
-</div>
-</div>
+
 <h2 class="statename" id = "state" align = "center"></h2>
 
 <script src="javascript/lab2.js" type="text/javascript"></script>
-<input class = "input" id="user_input" type="text" />
+<input class = "input" id="user_input" onkeypress = "keyhandle(event)" type="text" />
+<p class="help" id = "help" align = "center">Enter the abbreviation of the state border one at a time. <br>Type "None" if the state has no borders. <br>Press enter or click "Submit" to check your answer.<br>Good Luck! <p>
 <div>
-<button id = "newgame"type="button" onclick="playNewGame()">New Game</button>
+<button id = "newgame" type="button" onclick="playNewGame()">New Game</button>
 <button id = "submit" type="button" disabled="true"  onclick="getBorderStates()">Submit</button>
 <button id = "next" type="button" disabled="true" onclick= "nextQuestion()">Next Question</button>
 
@@ -29,4 +27,11 @@
 <h4 class="score" id = "questions" align = "center">10 Questions Left</h4>
 </div>
 </center>
+<script>
+    function keyhandle(e)
+    {
+        if(e.keyCode == 13)
+            getBorderStates();
+    }
+</script>
 </body>

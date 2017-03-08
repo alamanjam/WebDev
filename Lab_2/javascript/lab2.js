@@ -58,13 +58,15 @@ function getScore()
 function playNewGame()
 {
 getRandomState();
+questions = 10;
+score = 0;
 document.getElementById("user_input").value = "";
-document.getElementById("newgame").disabled = true;
+document.getElementById("newgame").disabled = false;
 document.getElementById("submit").disabled = false;
 document.getElementById("next").disabled = false ;
 document.getElementById("questions").innerHTML = questions + " Questions Left";
-document.getElementById("score").innerHTML = "Score: " + score;
 document.getElementById("help").innerHTML = "";
+document.getElementById("score").innerHTML = "Score: " + score;
 }
 function nextQuestion()
 {

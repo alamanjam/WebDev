@@ -9,6 +9,7 @@ function getStats()
 	json_url = "https://na.api.pvp.net/api/lol/na/v1.4/summoner/by-name/Boshal?api_key=RGAPI-84c03ac0-2955-4db4-9a04-d887acb179f2"
 	$.ajax({
 			  method: "GET",
+			  crossDomain: true,
 			  url: "worker.phps",
 			  data: { url : json_url }
 			})

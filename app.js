@@ -32,6 +32,7 @@ firebase.initializeApp(config);
 app.set('port', process.env.PORT || 8080);
 
 app.get('/', function(req, res) {	
+	console.log("User:");
    //res.send('Hello there peoples @\n' + req.connection.remoteAddress);
     res.sendFile(path.join(__dirname + '/index.html'));
 });

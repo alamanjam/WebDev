@@ -5,7 +5,8 @@ var express = require('express');
 var admin = require("firebase-admin");
 var path = require('path')
 var app = express();
-
+var firebase = require('firebase/app');
+require('firebase/database');
 
 app.use("/css",  express.static(__dirname + '/css'));
 app.use("/js", express.static(__dirname + '/js'));
@@ -18,8 +19,7 @@ app.use("/media", express.static(__dirname + '/media'));
 // app.use("/Lab_3", express.static(__dirname + '/Lab_3'));
 
 // app.use("/Lab_4", express.static(__dirname + '/Lab_4'));
-var firebase = require('firebase/app');
-require('firebase/database');
+
 
 var config = {
 	apiKey: "AIzaSyCWfGAUNsIHaCK2m7EooVQVk33Rwpzpnbw",
@@ -31,7 +31,7 @@ var config = {
   };
 
 firebase.initializeApp(config);
-s
+
 app.set('port', process.env.PORT || 8080);
 
 app.get('/', function(req, res) {	

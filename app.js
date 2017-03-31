@@ -29,14 +29,15 @@ var config = {
 
 firebase.initializeApp(config);
 
-var rootRef = firebase.database().ref();
+var users = new Firebase("https://heroku-5b3a3.firebaseio.com");
+var totalVisitors = users.child("totalVisitors");
 
 app.set('port', process.env.PORT || 8080);
 
 app.get('/', function(req, res) {	
 	console.log("User:");
-	firebase.database().ref('/').set({
-    username: "test",
+	totalVisitors.once('value', function (snapshot) {
+  totalVisitors.set(snapshot.val() + 1);
 });
    //res.send('Hello there peoples @\n' + req.connection.remoteAddress);
     res.sendFile(path.join(__dirname + '/index.html'));

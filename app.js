@@ -29,10 +29,15 @@ var config = {
 
 firebase.initializeApp(config);
 
+var rootRef = firebase.database().ref();
+
 app.set('port', process.env.PORT || 8080);
 
 app.get('/', function(req, res) {	
 	console.log("User:");
+	rootRef('/').set({
+    username: "snowshal"
+})
    //res.send('Hello there peoples @\n' + req.connection.remoteAddress);
     res.sendFile(path.join(__dirname + '/index.html'));
 });

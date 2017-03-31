@@ -24,10 +24,7 @@ app.use("/media", express.static(__dirname + '/media'));
 var config = {
 	apiKey: "AIzaSyCWfGAUNsIHaCK2m7EooVQVk33Rwpzpnbw",
     authDomain: "heroku-5b3a3.firebaseapp.com",
-    databaseURL: "https://heroku-5b3a3.firebaseio.com",
-    projectId: "heroku-5b3a3",
-    storageBucket: "heroku-5b3a3.appspot.com",
-    messagingSenderId: "126363260414"
+    databaseURL: "https://heroku-5b3a3.firebaseio.com"
   };
 
 firebase.initializeApp(config);

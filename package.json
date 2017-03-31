@@ -10,7 +10,9 @@
     "start": "node app.js"
   },
   "dependencies": {
-    "express": "4.13.3"
+    "express": "4.13.3",
+    "firebase": "^3.7.4",
+    "firebase-admin": "^4.1.4"
   },
   "keywords": [
     "node",

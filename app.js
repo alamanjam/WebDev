@@ -2,6 +2,7 @@
 // ABOVE LINE FOR TJ SERVER
 
 var express = require('express');
+var admin = require("firebase-admin");
 var path = require('path')
 var app = express();
 

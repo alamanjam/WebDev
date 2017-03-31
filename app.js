@@ -36,9 +36,9 @@ app.set('port', process.env.PORT || 8080);
 
 app.get('/', function(req, res) {	
 	console.log("User:");
-	totalVisitors.once('value', function (snapshot) {
-  totalVisitors.set(snapshot.val() + 1);
-});
+// 	totalVisitors.once('value', function (snapshot) {
+//   totalVisitors.set(snapshot.val() + 1);
+// });
    //res.send('Hello there peoples @\n' + req.connection.remoteAddress);
     res.sendFile(path.join(__dirname + '/index.html'));
 });

@@ -29,6 +29,8 @@ var config = {
     messagingSenderId: "126363260414"
   };
 
+firebase.initializeApp(config);
+s
 app.set('port', process.env.PORT || 8080);
 
 app.get('/', function(req, res) {	

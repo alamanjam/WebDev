@@ -17,6 +17,17 @@ app.use("/media", express.static(__dirname + '/media'));
 // app.use("/Lab_3", express.static(__dirname + '/Lab_3'));
 
 // app.use("/Lab_4", express.static(__dirname + '/Lab_4'));
+var firebase = require('firebase/app');
+require('firebase/database');
+
+var config = {
+	apiKey: "AIzaSyCWfGAUNsIHaCK2m7EooVQVk33Rwpzpnbw",
+    authDomain: "heroku-5b3a3.firebaseapp.com",
+    databaseURL: "https://heroku-5b3a3.firebaseio.com",
+    projectId: "heroku-5b3a3",
+    storageBucket: "heroku-5b3a3.appspot.com",
+    messagingSenderId: "126363260414"
+  };
 
 app.set('port', process.env.PORT || 8080);
 

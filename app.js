@@ -20,7 +20,6 @@ app.use("/media", express.static(__dirname + '/media'));
 // app.use("/Lab_4", express.static(__dirname + '/Lab_4'));
 
 var admin = require("firebase-admin");
-
 var serviceAccount = require(__dirname + '/serviceAccountKey.json');
 
 admin.initializeApp({
@@ -35,6 +34,10 @@ count.on("value", function(snapshot)
 {
 	console.log(snapshot.val()["vistors"]);	
 	snowshal = snapshot.val()["vistors"];
+	var body = "Visitors" + snowshal;
+    res.setHeader('Content-Type', 'text/plain');
+    res.setHeader('Content-Length', body.length);
+    res.end(body);
 });
 
 app.set('port', process.env.PORT || 8080);
@@ -44,7 +47,7 @@ app.get('/', function(req, res) {
 	count.set({
 		"vistors": snowshal+1
 	});
-    res.sendFile(path.join(__dirname + '/index.html'));
+    // res.sendFile(path.join(__dirname + '/index.html'));
 });
 
 app.get('/index', function(req, res) {

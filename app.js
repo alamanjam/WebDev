@@ -32,7 +32,7 @@ var db = admin.database();
 var count = db.ref("count");
 count.on("value", function(snapshot)
 {
-	console.log(snapshot.val()["visitors"]);	
+	console.log(snapshot.val());	
 });
 
 app.set('port', process.env.PORT || 8080);

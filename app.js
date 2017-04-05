@@ -29,10 +29,12 @@ admin.initializeApp({
 });
 
 var db = admin.database();
+var snowshal = 0;
 var count = db.ref("count");
 count.on("value", function(snapshot)
 {
 	console.log(snapshot.val()["vistors"]);	
+	snowshal = snapshot.val()["vistors"];
 });
 
 app.set('port', process.env.PORT || 8080);
@@ -40,8 +42,8 @@ app.set('port', process.env.PORT || 8080);
 app.get('/', function(req, res) {	
 	console.log("User:");
 	count.set({
-		vistors = vistors+1;
-	})
+		"vistors": snowshal+1;
+	});
     res.sendFile(path.join(__dirname + '/index.html'));
 });
 

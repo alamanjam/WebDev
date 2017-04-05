@@ -2,11 +2,10 @@
 // ABOVE LINE FOR TJ SERVER
 
 var express = require('express');
-var admin = require("firebase-admin");
 var path = require('path')
 var app = express();
-var firebase = require('firebase/app');
-require('firebase/database');
+// var firebase = require('firebase/app');
+// require('firebase/database');
 
 app.use("/css",  express.static(__dirname + '/css'));
 app.use("/js", express.static(__dirname + '/js'));

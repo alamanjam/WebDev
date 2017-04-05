@@ -20,18 +20,21 @@ app.use("/media", express.static(__dirname + '/media'));
 
 // app.use("/Lab_4", express.static(__dirname + '/Lab_4'));
 
+var admin = require("firebase-admin");
 
-var config = {
-	apiKey: "AIzaSyCWfGAUNsIHaCK2m7EooVQVk33Rwpzpnbw",
-    authDomain: "heroku-5b3a3.firebaseapp.com",
-    databaseURL: "https://heroku-5b3a3.firebaseio.com"
-  };
+var serviceAccount = require(_dirname + "/serviceAccountKey.json");
 
-firebase.initializeApp(config);
+admin.initializeApp({
+  credential: admin.credential.cert(serviceAccount),
+  databaseURL: "https://heroku-5b3a3.firebaseio.com"
+});
 
-var users = new Firebase("https://heroku-5b3a3.firebaseio.com");
-var totalVisitors = users.child("totalVisitors");
-
+var db = admin.database();
+var count = db.ref("count");
+count.on("value", function(snapshot)
+{
+	console.log(snapshot.val())	
+});
 app.set('port', process.env.PORT || 8080);
 
 app.get('/', function(req, res) {	

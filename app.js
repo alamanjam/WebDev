@@ -30,10 +30,9 @@ admin.initializeApp({
 
 var db = admin.database();
 var count = db.ref("count");
-count.on("child_changed", function(snapshot)
+count.on("value", function(snapshot)
 {
-	console.log("boshal");
-	console.log(snapshot.val());	
+	console.log(snapshot.val()["visitors"]);	
 });
 
 app.set('port', process.env.PORT || 8080);

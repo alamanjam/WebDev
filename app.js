@@ -2,7 +2,7 @@
 // ABOVE LINE FOR TJ SERVER
 
 var express = require('express');
-var path = require('path')
+var path = require('path');
 var app = express();
 // var firebase = require('firebase/app');
 // require('firebase/database');
@@ -32,7 +32,7 @@ var db = admin.database();
 var count = db.ref("count");
 count.on("value", function(snapshot)
 {
-	console.log(snapshot.val())	
+	console.log(snapshot.val());	
 });
 app.set('port', process.env.PORT || 8080);
 

@@ -30,7 +30,7 @@ admin.initializeApp({
 
 var db = admin.database();
 var count = db.ref("count");
-count.on("value", function(snapshot)
+count.on("child_changed", function(snapshot)
 {
 	console.log("boshal");
 	console.log(snapshot.val());	

@@ -21,7 +21,7 @@ app.use("/media", express.static(__dirname + '/media'));
 
 var admin = require("firebase-admin");
 
-var serviceAccount = require(_dirname + "/serviceAccountKey.json");
+var serviceAccount = require(__dirname + '/serviceAccountKey.json');
 
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
@@ -34,14 +34,11 @@ count.on("value", function(snapshot)
 {
 	console.log(snapshot.val());	
 });
+
 app.set('port', process.env.PORT || 8080);
 
 app.get('/', function(req, res) {	
 	console.log("User:");
-// 	totalVisitors.once('value', function (snapshot) {
-//   totalVisitors.set(snapshot.val() + 1);
-// });
-   //res.send('Hello there peoples @\n' + req.connection.remoteAddress);
     res.sendFile(path.join(__dirname + '/index.html'));
 });
 

@@ -44,7 +44,7 @@ app.get('/', function(req, res) {
 	count.set({
 		"vistors": snowshal+1
 	});
-	var body = "Visitors" + snowshal;
+	var body = "Visitors: " + snowshal;
     res.setHeader('Content-Type', 'text/plain');
     res.setHeader('Content-Length', body.length);
     res.end(body);

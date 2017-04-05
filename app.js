@@ -42,7 +42,7 @@ app.set('port', process.env.PORT || 8080);
 app.get('/', function(req, res) {	
 	console.log("User:");
 	count.set({
-		"vistors": snowshal+1;
+		"vistors": snowshal+1
 	});
     res.sendFile(path.join(__dirname + '/index.html'));
 });

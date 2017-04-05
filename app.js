@@ -32,6 +32,7 @@ var db = admin.database();
 var count = db.ref("count");
 count.on("value", function(snapshot)
 {
+	console.log("boshal");
 	console.log(snapshot.val());	
 });
 
